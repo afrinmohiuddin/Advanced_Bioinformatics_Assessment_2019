@@ -1,0 +1,85 @@
+---
+title: "Advanced Bioinformatics 2019 assessment"
+author: '9526'
+date: "10/05/2019"
+output: html_document keep_md: yes
+---
+
+###Question 1###
+```{r}
+sum(5:55)
+```
+
+###Question 2###
+```{r}
+sumfun<- function (n)
+  sum(5:n)
+sumfun(10)
+sumfun (20)
+sumfun(100)
+```
+
+###Question 3###
+```{r}
+fibseq<-seq(1,12)
+fibseq[1]=1
+fibseq[2]=1
+
+for (i in 3:12)
+
+fibseq[i]<-fibseq[i-1]+fibseq[i-2]
+fibseq
+```
+
+
+###Question 4###
+```{r}
+library(ggplot2)
+data<-mtcars
+data$gear<-as.factor(data$gear)
+p<-ggplot(data, aes(x=gear, y=mpg, color=gear)) + geom_boxplot()
+p
+          
+```
+
+
+###Question 5###
+```{r}
+cars.lm<- lm(formula = dist~speed, data = cars)
+summary(cars.lm)
+
+```
+###the fitted slope = 3.9324
+###the intercept of line = -17.5791
+###the standard deviation = 0.4155
+
+###Question 6###
+```{r}
+library(ggplot2)
+data("cars")
+ggplot(cars, aes(x=speed, y=dist)) + 
+  geom_point(color='Black', size = 1) + 
+  geom_smooth(method=lm, color='Blue') + labs(title= 'Reaction time for the driver to start breaking ', x= 'Speed ( in units mph)', y= 'Breaking distance (in units of feet) ')
+```
+
+###Question 7###
+
+```{r}
+library(ggplot2)
+
+
+data <- cars
+reg_data <- lm(dist ~ speed + I(speed^2), data=data)
+reg_data
+reg_data$coefficients[3]
+data$new_speed <- data$speed * (5280/3600)###converting speed miles per housr to feet per second.###
+
+
+reg_data <- lm(dist ~ 0 + new_speed + I(new_speed^2), data=data)
+summary(reg_data) # Adding the 0 term tells the lm() to fit the line through the origin
+
+ggplot(data, aes(x = new_speed, y = dist)) + 
+ geom_point(color='Black', size = 1) + 
+ geom_smooth(method = "lm", formula = "y ~ 0 + x + I(x^2)",  color="red") + labs(title= 'Reaction time for the driver to start breaking ', y = 'Stopping Distance of a Car in Feet', x = "The Speed of a Car in Feet per second")
+
+```
