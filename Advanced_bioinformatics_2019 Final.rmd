@@ -37,7 +37,7 @@ fibseq### print out of the first 12 entries of the Fibonacci series after the fi
 ```{r}
 library(ggplot2)
 data<-mtcars### assigning what data being used###
-data$gear<-as.factor(data$gear) ###convert the gear variable from numeric into factor###
+data$gear<-as.factor(mtcars$gear) ###convert the gear variable from numeric into factor###
 p<-ggplot(data, aes(x=gear, y=mpg, fill=gear )) + geom_boxplot()
 p
           ### to plot box plots with the x axis as gear, y axis as mpg and fill in the gears with colour###
@@ -59,8 +59,8 @@ summary(cars.lm)
 library(ggplot2)
 data("cars")
 ggplot(cars, aes(x=speed, y=dist)) + 
-  geom_point(color='Black', size = 1) + 
-  geom_smooth(method=lm, color='Blue') + labs(title= 'Linear relationship between speed and breaking distance in the variable distance ', x= 'Speed ( in units mph)', y= 'Breaking distance (in units of feet) ')### plot the data points from Question 5 and the linear fit.###
+  geom_point(color='Blue', size = 1) +xlim(c(0, 25)) +
+  geom_smooth(method=lm, color='Black', fullrange=TRUE) + labs(title= 'Linear relationship between speed and breaking distance in the variable distance ', x= 'Speed ( in units mph)', y= 'Breaking distance (in units of feet) ')### plot the data points from Question 5 and the linear fit.###
 ```
 
 ###Question 7###
@@ -80,7 +80,7 @@ reg_data <- lm(dist ~ 0 + new_speed + I(new_speed^2), data=data)
 summary(reg_data) ### Adding the 0 term tells the lm() to fit the line through the origin
 
 ggplot(data, aes(x = new_speed, y = dist)) + 
- geom_point(color='Black', size = 1) + 
- geom_smooth(method = "lm", formula = "y ~ 0 + x + I(x^2)",  color="red") + labs(title= 'Reaction time for the driver to start breaking ', y = 'Stopping Distance of a Car in Feet', x = "The Speed of a Car in Feet per second")
+ geom_point(color='Black', size = 1) + xlim(c(0,40)) +
+ geom_smooth(method = "lm", formula = "y ~ 0 + x + I(x^2)",  color="red", fullrange='TRUE') + labs(title= 'Reaction time for the driver to start breaking ', y = 'Stopping Distance of a Car in Feet', x = "The Speed of a Car in Feet per second")
 
 ```
