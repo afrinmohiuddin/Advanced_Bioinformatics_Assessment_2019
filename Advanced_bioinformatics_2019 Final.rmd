@@ -8,8 +8,9 @@ output: html_document keep_md: yes
 ###Question 1###
 ```{r}
 sum(5:55)
-```
 ###sum of all integers between 5 and 55
+```
+
 
 ###Question 2###
 ```{r}
@@ -40,7 +41,8 @@ data<-mtcars### assigning what data being used###
 data$gear<-as.factor(mtcars$gear) ###convert the gear variable from numeric into factor###
 p<-ggplot(data, aes(x=gear, y=mpg, fill=gear )) + geom_boxplot()
 p
-          ### to plot box plots with the x axis as gear, y axis as mpg and fill in the gears with colour###
+
+### to plot box plots with the x axis as gear, y axis as mpg and fill in the gears with colour###
 ```
 
 
@@ -82,5 +84,13 @@ summary(reg_data) ### Adding the 0 term tells the lm() to fit the line through t
 ggplot(data, aes(x = new_speed, y = dist)) + 
  geom_point(color='Black', size = 1) + xlim(c(0,40)) +
  geom_smooth(method = "lm", formula = "y ~ 0 + x + I(x^2)",  color="red", fullrange='TRUE') + labs(title= 'Reaction time for the driver to start breaking ', y = 'Stopping Distance of a Car in Feet', x = "The Speed of a Car in Feet per second")
+
+### ggplot defining the data being used and how to plot it.
+
+###geom_point = defines the colour and size of the data.
+
+###xlim = defines the x axis limit which shows the full scale and indicates where the intercept on the y-axis which supports the data.
+
+###geom_smooth = gives the fitted relationship.
 
 ```
