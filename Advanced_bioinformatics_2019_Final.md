@@ -43,7 +43,7 @@
     p<-ggplot(data, aes(x=gear, y=mpg, fill=gear )) + geom_boxplot()
     p
 
-![](Advanced_bioinformatics_2019_Final_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](https://github.com/afrinmohiuddin/Advanced_Bioinformatics_Assessment_2019/blob/master/Question%204-1.png)
 
     ### to plot box plots with the x axis as gear, y axis as mpg and fill in the gears with colour###
 
