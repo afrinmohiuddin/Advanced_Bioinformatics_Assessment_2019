@@ -87,7 +87,7 @@
       geom_point(color='Blue', size = 1) +xlim(c(0, 25)) +
       geom_smooth(method=lm, color='Black', fullrange=TRUE) + labs(title= 'Linear relationship between speed and breaking distance in the variable distance ', x= 'Speed ( in units mph)', y= 'Breaking distance (in units of feet) ')### plot the data points from Question 5 and the linear fit.###
 
-![](Advanced_bioinformatics_2019_Final_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![](https://github.com/afrinmohiuddin/Advanced_Bioinformatics_Assessment_2019/blob/master/Question%20-6-1.png)
 
 ### Question 7
 
