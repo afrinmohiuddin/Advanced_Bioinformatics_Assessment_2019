@@ -143,7 +143,7 @@
      geom_point(color='Black', size = 1) + xlim(c(0,40)) +
      geom_smooth(method = "lm", formula = "y ~ 0 + x + I(x^2)",  color="red", fullrange='TRUE') + labs(title= 'Reaction time for the driver to start breaking ', y = 'Stopping Distance of a Car in Feet', x = "The Speed of a Car in Feet per second")
 
-![](Advanced_bioinformatics_2019_Final_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+![](https://github.com/afrinmohiuddin/Advanced_Bioinformatics_Assessment_2019/blob/master/Question-7-1.png)
 
     ### ggplot defining the data being used and how to plot it.
 
