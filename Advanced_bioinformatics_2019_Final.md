@@ -43,7 +43,7 @@
     p<-ggplot(data, aes(x=gear, y=mpg, fill=gear )) + geom_boxplot()
     p
 
-![](Advanced_bioinformatics_2019_Final_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](https://github.com/afrinmohiuddin/Advanced_Bioinformatics_Assessment_2019/blob/master/unnamed-chunk-4-1.png)
 
     ### to plot box plots with the x axis as gear, y axis as mpg and fill in the gears with colour###
 
@@ -87,7 +87,7 @@
       geom_point(color='Blue', size = 1) +xlim(c(0, 25)) +
       geom_smooth(method=lm, color='Black', fullrange=TRUE) + labs(title= 'Linear relationship between speed and breaking distance in the variable distance ', x= 'Speed ( in units mph)', y= 'Breaking distance (in units of feet) ')### plot the data points from Question 5 and the linear fit.###
 
-![](Advanced_bioinformatics_2019_Final_files/figure-markdown_strict/unnamed-chunk-6-1.png)
+![](https://github.com/afrinmohiuddin/Advanced_Bioinformatics_Assessment_2019/blob/master/unnamed-chunk-6-1.png)
 
 ### Question 7
 
@@ -143,7 +143,7 @@
      geom_point(color='Black', size = 1) + xlim(c(0,40)) +
      geom_smooth(method = "lm", formula = "y ~ 0 + x + I(x^2)",  color="red", fullrange='TRUE') + labs(title= 'Reaction time for the driver to start breaking ', y = 'Stopping Distance of a Car in Feet', x = "The Speed of a Car in Feet per second")
 
-![](Advanced_bioinformatics_2019_Final_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+![](https://github.com/afrinmohiuddin/Advanced_Bioinformatics_Assessment_2019/blob/master/unnamed-chunk-7-1.png)
 
     ### ggplot defining the data being used and how to plot it.
 
