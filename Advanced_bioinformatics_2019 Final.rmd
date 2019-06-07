@@ -4,6 +4,8 @@ author: '9526'
 date: "10/05/2019"
 output:
   html_document: default
+  md_document: default
+    
 ---
 
 ###Question 1###
@@ -81,6 +83,9 @@ data$new_speed <- data$speed * (5280/3600)###converting speed miles per housr to
 
 reg_data <- lm(dist ~ 0 + new_speed + I(new_speed^2), data=data)
 summary(reg_data) ### Adding the 0 term tells the lm() to fit the line through the origin
+
+### Yes the data output is reasonable.
+
 
 ggplot(data, aes(x = new_speed, y = dist)) + 
  geom_point(color='Black', size = 1) + xlim(c(0,40)) +
